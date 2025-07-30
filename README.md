@@ -90,7 +90,13 @@ The ```DEBUG``` flag in line 6 of py1620.py enables logging a CPU trace to ```cm
 * hello.sps: assembly
 * test.f: Fortran
 
-The ```rosetta_code/``` directory contains four assembly programs which were created for [Rosetta Code](https://rosettacode.miraheze.org/wiki/Category:IBM_1620_SPS): a cellular automaton, Fibonacci numbers, FizzBuzz, and the Mandelbrot set. Except for the Mandelbrot set (which requires floating-point instructions), all programs work in Py1620. Assembly was done with [SPS1620](https://github.com/IBM-1620/SPS1620), a Java-based cross-assembler.
+#### Rosetta Code examples
+
+The ```rosetta_code/``` directory contains four assembly programs which were created for [Rosetta Code](https://rosettacode.org/wiki/Category:IBM_1620_SPS): a cellular automaton, Fibonacci numbers, FizzBuzz, and the Mandelbrot set. Except for the Mandelbrot set (which requires floating-point instructions), all programs work in Py1620.
+
+Assembly was done with [SPS1620](https://github.com/IBM-1620/SPS1620), a Java-based cross-assembler, to create the CRD/CMEM/LST output files.
+
+The TXT files on the other hand have been assembled in Py1620 with the SPS assembler. The main difference is that the TXT binaries will halt after loading.
 
 ### Why emulate the IBM 1620?
 
