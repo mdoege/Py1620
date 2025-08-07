@@ -72,10 +72,12 @@ The ```DEBUG``` flag in line 6 of py1620.py enables logging a CPU trace to ```cm
 * block.txt: punch block letter messages into punch cards
 * cal.txt: day of the week calculator
 * gotran.txt: the GOTRAN interactive programming language
+* hello.txt: Hello World assembly demo; assembled binary from hello.sps
 * pdq.txt: PDQ Fortran compiler
 * pdq-fixed.txt: PDQ Fortran compiler subroutines (fixed format)
 * pdq-free.txt: PDQ Fortran compiler subroutines (free format)
 * sps.txt: Symbolic Programming System (assembler)
+* test.txt: Fortran demo; compiled binary from test.f
 * tic3d.txt: 3D tic-tac-toe on a 4x4x4 grid
 * tic.txt: normal 3x3 tic-tac-toe
 
