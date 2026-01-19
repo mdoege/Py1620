@@ -8,5 +8,5 @@
  1    c=2.+c
       d=4.*a
  2    print 10,d
- 10   format ( f12.9 )
+ 10   format ( f9.6 )
       end
