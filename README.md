@@ -933,7 +933,7 @@ END
 halt> q
 ```
 
-### Calculating Pi
+#### Calculating Pi
 
 Running this program requires setting DIV_WORKAROUND to True in Py1620.
 
