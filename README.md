@@ -121,6 +121,14 @@ A major **advantage of the 1620 for emulation** is that a lot of software for th
 
 ![IBM 1620](IBM_1620_at_CHM.jpg "IBM 1620 at the Computer History Museum in 2006")
 
+----
+
+## The IBM 1620 emulator in use
+
+This section shows how to **run various programs on the emulator**. Usually that involves loading a card reader input file in **TXT (or CRD) format**. Sometimes **additional program options** are selected by sense switch settings. A few programs such as compilers and assemblers also need an **output file** to write punch cards to.
+
+Sometimes a program will halt after loading, for example to give the operator the opportunity to change sense switch settings. Pressing Return will continue execution whenever the system has been halted.
+
 ### Power of 2 demo program from the Computer History Museum
 
 ![Py1620](py1620.png "Power of Two output in IBM 1403 font")
