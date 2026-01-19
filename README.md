@@ -2,11 +2,15 @@
 
 ## Py1620 (IBM 1620 emulator)
 
-This [IBM 1620](https://en.wikipedia.org/wiki/IBM_1620) emulator in Python can now run the famous IBM 1620 baseball game. Also included are the [Computer History Museum](https://computerhistory.org/)'s [Power of Two](https://github.com/IBM-1620/Junior/blob/master/diagnostics/binaries/APP_Power_Of_2.cmem) demo program, 2D tic-tac-toe from the 1620 General Program Library, and "99 Bottles of Beer" by Chuck Guzis among others.
+This **[IBM 1620](https://en.wikipedia.org/wiki/IBM_1620) emulator in Python** can now run the famous IBM 1620 baseball game. Also included are the [Computer History Museum](https://computerhistory.org/)'s [Power of Two](https://github.com/IBM-1620/Junior/blob/master/diagnostics/binaries/APP_Power_Of_2.cmem) demo program, 2D tic-tac-toe from the 1620 General Program Library, and "99 Bottles of Beer" by Chuck Guzis among others.
 
-The emulated machine is an IBM 1620 Model 1 with 20,000 decimal digits of memory plus the optional divide instructions. Other special features (such as indirect addressing or floating point instructions) are not supported. The addition and multiplication tables in 1620 memory are not used but standard Python integer math. Input and output are done via punch cards (= text files) and the typewriter (= terminal).
+The emulated machine is an **IBM 1620 Model 1 with 20,000 decimal digits of memory plus the optional divide instructions**. Other special features (such as indirect addressing or floating point instructions) are not supported. The addition and multiplication tables in 1620 memory are not used but standard Python integer math. **Input and output are done via punch cards (= text files) and the typewriter (= terminal).**
+
+Also see my [IBM1620-Baseball](https://github.com/mdoege/IBM1620-Baseball) repo for additional IBM 1620 tools and documentation.
 
 ### Emulator usage
+
+#### Running the emulator
 
 ```python3 py1620.py input.txt [0000] [output.txt]```
 
@@ -20,7 +24,9 @@ To run the slot machine / one-armed bandit, playing for 50 cents (sense switch 4
 
 ```python3 py1620.py band.txt 0001```
 
-Without any arguments, the tic-tac-toe game is run.
+Without any arguments, the tic-tac-toe game is loaded.
+
+#### Emulator options and other useful hints
 
 On Linux, you can make tabular output from the baseball and blackjack games line up properly by first setting the terminal's tab stops with the ```tabs``` command, e.g. ```tabs -18``` for the baseball game and ```tabs -16``` for blackjack.
 
@@ -32,9 +38,7 @@ If the ```SLOW``` parameter on line 7 of py1620.py is set to True, terminal outp
 
 Py1620 uses a Unicode combining character to display overbars for digits with an active flag bit. These overbars may not look all that great with some terminal fonts, e.g. they may be shifted horizontally in respect to the digit below. Switching to a different terminal font with better overbar support (like [GNU Unifont](https://unifoundry.com/unifont/)) will solve this issue.
 
-See the [IBM1620-Baseball](https://github.com/mdoege/IBM1620-Baseball) repo for additional IBM 1620 tools and documentation.
-
-### Built-in debugger
+#### Built-in debugger
 
 Pressing Ctrl-C enters the debugger, where "h" prints help, "q" quits the emulator, and "c" (or just Return) continues emulation. When the machine halts for another reason (e.g. a halt instruction, a breakpoint, etc.), this will also trigger the debugger, with the prompt showing the reason for halting (```halt, break, step, watch, user, error```).
 
