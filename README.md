@@ -24,7 +24,7 @@ Without any arguments, the tic-tac-toe game is run.
 
 On Linux, you can make tabular output from the baseball and blackjack games line up properly by first setting the terminal's tab stops with the ```tabs``` command, e.g. ```tabs -18``` for the baseball game and ```tabs -16``` for blackjack.
 
-Machine memory size (```MSIZE```) is defined on line 39 of py1620.py. The IBM 1620 was also available with 40,000 or 60,000 digits of memory and supported up to 100,000 digits in principle. However, some programs (like the day of the week program) will not work with memory sizes larger than 20k, therefore this remains the default.
+Machine memory size (```MSIZE```) is defined on line 40 of py1620.py. The IBM 1620 was also available with 40,000 or 60,000 digits of memory and supported up to 100,000 digits in principle. However, some programs (like the day of the week program) will not work with memory sizes larger than 20k, therefore this remains the default.
 
 The Fortran compiler especially benefits from 40k digits or more, as its symbol table is limited to 200 entries on 20k systems, which is not enough to compile larger programs.
 
@@ -91,6 +91,7 @@ The ```DEBUG``` flag in line 6 of py1620.py enables logging a CPU trace to ```cm
 * gotran_input.txt: GOTRAN
 * hello.sps: assembly
 * test.f: Fortran
+* pi.f: Fortran
 
 #### Rosetta Code examples
 
@@ -689,6 +690,8 @@ GOTRAN is an interactive Fortran-like programming language for the IBM 1620. A p
 
 Here are three GOTRAN programs. The first one computes the sine for different angles, the second one the Fibonacci sequence and the golden ratio, and the third one computes the golden ratio directly:
 
+#### Print sine table
+
 ```
 $ python3 py1620.py gotran.txt 
 
@@ -726,6 +729,11 @@ END OF PROGRAM
 
 *** HALT at 1842; press Return to continue; enter 'h' for help or 'q' to quit
 halt> 
+```
+
+#### Fibonacci (iterative)
+
+```
 a=1.
 
 b=1.
@@ -782,6 +790,11 @@ END OF PROGRAM
 
 *** HALT at 1842; press Return to continue; enter 'h' for help or 'q' to quit
 halt> 
+```
+
+#### Fibonacci (exact)
+
+```
 a=sqr(5.)
 
 g=1.+a
@@ -805,7 +818,7 @@ END OF PROGRAM
 halt> 
 ```
 
----
+#### Reading a GOTRAN program from punch cards
 
 If sense switch 1 is set, GOTRAN will read and run programs from the punch card reader instead of the typewriter. A new card reader input file has to be attached from the debugger after GOTRAN has loaded:
 
@@ -918,6 +931,43 @@ LOAD DATA
 END
 *** HALT at 2524; press Return to continue; enter 'h' for help or 'q' to quit
 halt> q
+```
+
+### Calculating Pi
+
+Running this program requires setting DIV_WORKAROUND to True in Py1620.
+
+```
+$ cat pdq.txt pi.f pdq-fixed.txt > pi-deck.txt
+$ python3 py1620.py pi-deck.txt 0101 pi.txt
+
+PDQ FORTRAN C2  
+
+START
+(…)
+
+LOAD SUBROUTINES
+PDQ FIXED FMT SUBROUTNS 11/63
+PROCESSING COMPLETE
+*** HALT at 1864; press Return to continue; enter 'h' for help or 'q' to quit
+halt> *** no more cards to read, halting at PC = 1876
+halt> q
+$ python3 py1620.py pi.txt
+
+LOAD DATA
+ 3.139593700
+ 3.140594700
+ 3.140928800
+ 3.141096700
+ 3.141197700
+ 3.141265000
+ 3.141314100
+ 3.141351000
+ 3.141379800
+ 3.141403100
+END
+*** HALT at 2524; press Return to continue; enter 'h' for help or 'q' to quit
+halt>
 ```
 
 ### Symbolic Programming System (assembler)

@@ -3,9 +3,10 @@
 import sys, time
 from array import array
 
-DEBUG = False       # log commands to cmd.txt?
-SLOW  = False       # realistic output speed (10 cps)?
-SINGLE_STEP = False # single-step/manual mode
+DEBUG = False           # log commands to cmd.txt?
+SLOW  = False           # realistic output speed (10 cps)?
+SINGLE_STEP = False     # single-step/manual mode
+DIV_WORKAROUND = False  # enable division workaround for PDQ Fortran binaries
 
 if len(sys.argv) > 1 and sys.argv[1][-5:] == ".cmem":
     CMEM = True     # read from CMEM file
@@ -625,6 +626,9 @@ while True:
 
         # D
         if OP == (2, 9):
+            if DIV_WORKAROUND:
+                for i in range(getim(PC+2)+1, 99):
+                    F[i] = 0
             p = getnum(0, x2 = 99)
             q = getnum(PC+7)
             pi, qi = p[1] * int(p[0]), q[1] * int(q[0])
@@ -981,6 +985,8 @@ while True:
                     IND["OVERFLOW"] = False
                     PC = pos
                     continue
+            elif dev == 15:
+                pass #print("exp check", pos)
             elif dev == 16:
                 pass #print("mem check", pos)
             elif dev == 17:
