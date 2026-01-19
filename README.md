@@ -103,7 +103,7 @@ Assembly was done with [SPS1620](https://github.com/IBM-1620/SPS1620), a Java-ba
 
 The TXT files on the other hand have been assembled in Py1620 with the SPS assembler. The main difference is that the TXT binaries will halt after loading.
 
-### Why emulate the IBM 1620?
+### IBM 1620 background information
 
 The **decimal-based IBM 1620** (codename CADET) computer was intended for science and engineering applications and was, like its business-oriented counterpart the IBM 1401 (codename SPACE), part of IBM's late 1950s effort to produce **smaller, more affordable computers** using the latest technology (core memory, transistors) that would appeal to budget-conscious first-time buyers such as **Universities and mid-size business**. Both computers were announced in 1959, were very successful in their respective niches and were often in use into the early 1970s. They were also kept alive by **emulation**, as IBM 360-type mainframes supported emulating them.
 
