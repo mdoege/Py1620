@@ -733,6 +733,8 @@ halt>
 
 #### Fibonacci (iterative)
 
+(continuing the GOTRAN session from the previous section)
+
 ```
 a=1.
 
@@ -793,6 +795,8 @@ halt>
 ```
 
 #### Fibonacci (exact)
+
+(continuing the GOTRAN session from the previous section)
 
 ```
 a=sqr(5.)
@@ -933,7 +937,7 @@ END
 halt> q
 ```
 
-#### Calculating Pi
+#### Calculating π
 
 Running this program requires setting DIV_WORKAROUND to True in Py1620.
 
@@ -950,7 +954,6 @@ LOAD SUBROUTINES
 PDQ FIXED FMT SUBROUTNS 11/63
 PROCESSING COMPLETE
 *** HALT at 1864; press Return to continue; enter 'h' for help or 'q' to quit
-halt> *** no more cards to read, halting at PC = 1876
 halt> q
 $ python3 py1620.py pi.txt
 
