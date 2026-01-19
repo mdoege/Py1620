@@ -948,7 +948,8 @@ $ python3 py1620.py pi-deck.txt 0101 pi.txt
 PDQ FORTRAN C2  
 
 START
-(…)
+
+  (…full Fortran compiler output omitted here…)
 
 LOAD SUBROUTINES
 PDQ FIXED FMT SUBROUTNS 11/63
