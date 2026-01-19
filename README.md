@@ -28,15 +28,13 @@ Without any arguments, the tic-tac-toe game is loaded.
 
 #### Emulator options and other useful hints
 
-* On Linux, you can make tabular output from the baseball and blackjack games line up properly by first setting the terminal's tab stops with the ```tabs``` command, e.g. ```tabs -18``` for the baseball game and ```tabs -16``` for blackjack.
+* On Linux, you can make **tabular output** from the baseball and blackjack games line up properly by first setting the terminal's **tab stops** with the ```tabs``` command, e.g. ```tabs -18``` for the baseball game and ```tabs -16``` for blackjack.
 
-* Machine memory size (```MSIZE```) is defined on line 40 of py1620.py. The IBM 1620 was also available with 40,000 or 60,000 digits of memory and supported up to 100,000 digits in principle. However, some programs (like the day of the week program) will not work with memory sizes larger than 20k, therefore this remains the default.
+* Machine **memory size** (```MSIZE```) is defined on line 40 of py1620.py. The IBM 1620 was also available with **40,000 or 60,000 digits of memory** and supported up to 100,000 digits in principle. However, some programs (like the day of the week program) will not work with memory sizes larger than 20k, therefore this remains the default. The **Fortran compiler** especially benefits from 40k digits or more, as its symbol table is limited to 200 entries on 20k systems, which is not enough to compile larger programs.
 
-* The Fortran compiler especially benefits from 40k digits or more, as its symbol table is limited to 200 entries on 20k systems, which is not enough to compile larger programs.
+* If the ```SLOW``` parameter on line 7 of py1620.py is set to True, **terminal output speed will be limited to 10 characters per second** like a typewriter on a real IBM 1620. This setting makes sense especially for the baseball game and the 99 bottles of beer demo, because otherwise output will scroll by much too fast to read.
 
-* If the ```SLOW``` parameter on line 7 of py1620.py is set to True, terminal output speed will be limited to 10 characters per second like a typewriter on a real IBM 1620. This setting makes sense especially for the baseball game and the 99 bottles of beer demo, because otherwise output will scroll by much too fast to read.
-
-* Py1620 uses a Unicode combining character to display overbars for digits with an active flag bit. These overbars may not look all that great with some terminal fonts, e.g. they may be shifted horizontally in respect to the digit below. Switching to a different terminal font with better overbar support (like [GNU Unifont](https://unifoundry.com/unifont/)) will solve this issue.
+* Py1620 uses a **Unicode** combining character to display overbars for digits with an active flag bit. These overbars may not look all that great with some terminal fonts, e.g. they may be shifted horizontally in respect to the digit below. Switching to a **different terminal font** with better overbar support (like [GNU Unifont](https://unifoundry.com/unifont/)) will solve this issue.
 
 #### Built-in debugger
 
